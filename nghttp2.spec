@@ -1,6 +1,6 @@
 Name:           nghttp2
 Version:        1.39.2
-Release:        1
+Release:        2
 Summary:        Contains the HTTP/2 client, server and proxy programs.
 License:        MIT
 URL:            https://nghttp2.org/
@@ -85,13 +85,15 @@ make %{?_smp_mflags}  check
 %{_libdir}/pkgconfig/libnghttp2.pc
 
 %files help
-%defattr(-,root,root}
+%defattr(-,root,root)
 %{_mandir}/man1/*
 
-
 %changelog
+* Tue Dec 24 2019 openEuler Buildteam <buildteam@openeuler.org> - 1.39.2-2
+- Type:bugfix
+- ID:NA
+- SUG:NA
+- DESC:bugfix in files
+
 * Tue Sep 10 2019 openEuler Buildteam <buildteam@openeuler.org> - 1.39.2-1
 - Package init
-
-
-
