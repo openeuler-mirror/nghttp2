@@ -1,6 +1,6 @@
 Name:           nghttp2
-Version:        1.39.2
-Release:        2
+Version:        1.41.0
+Release:        1
 Summary:        Contains the HTTP/2 client, server and proxy programs.
 License:        MIT
 URL:            https://nghttp2.org/
@@ -8,6 +8,9 @@ Source0:        https://github.com/nghttp2/nghttp2/releases/download/v%{version}
 
 BuildRequires:  CUnit-devel c-ares-devel gcc-c++ libev-devel openssl-devel
 BuildRequires:  python3-devel systemd-devel zlib-devel
+BuildRequires:  libnghttp2 nghttp2
+
+Provides:       libnghttp2.so.14()(64bit)
 
 Requires:       libnghttp2 = %{version}-%{release}
 %{?systemd_requires}
@@ -47,6 +50,7 @@ sed -e '1 s|^#!/.*python|&3|' -i script/fetch-ocsp-response
 %make_install
 install -d $RPM_BUILD_ROOT%{_unitdir}
 install -p -m0444  contrib/nghttpx.service $RPM_BUILD_ROOT%{_unitdir}
+cp -p %{_libdir}/libnghttp2.so.14.18.*  $RPM_BUILD_ROOT%{_libdir}/
 %delete_la
 
 %ldconfig_scriptlets -n libnghttp2
@@ -73,6 +77,7 @@ make %{?_smp_mflags}  check
 %files  -n libnghttp2
 %defattr(-,root,root)
 %license COPYING
+%{_libdir}/libnghttp2.so.14.18.*
 %{_libdir}/libnghttp2.so.*
 %{!?_licensedir:%global license %%doc}
 
@@ -89,6 +94,12 @@ make %{?_smp_mflags}  check
 %{_mandir}/man1/*
 
 %changelog
+* Thu Jul 23 2020 cuibaobao <cuibaobao1@huawei.com> - 1.41.0-1
+- Type:update
+- ID:NA
+- SUG:NA
+- DESC:update to 1.41.0
+
 * Tue Dec 24 2019 openEuler Buildteam <buildteam@openeuler.org> - 1.39.2-2
 - Type:bugfix
 - ID:NA
