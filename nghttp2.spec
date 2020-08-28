@@ -1,6 +1,6 @@
 Name:           nghttp2
-Version:        1.39.2
-Release:        2
+Version:        1.41.0
+Release:        1
 Summary:        Contains the HTTP/2 client, server and proxy programs.
 License:        MIT
 URL:            https://nghttp2.org/
@@ -89,6 +89,12 @@ make %{?_smp_mflags}  check
 %{_mandir}/man1/*
 
 %changelog
+* Wed Aug 26 2020 yuboyun <yuboyun@huawei.com> - 1.41.0-1
+- Type:update
+- ID:NA
+- SUG:NA
+- DESC:update to 1.41.0
+
 * Tue Dec 24 2019 openEuler Buildteam <buildteam@openeuler.org> - 1.39.2-2
 - Type:bugfix
 - ID:NA
