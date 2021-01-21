@@ -1,12 +1,12 @@
 Name:           nghttp2
 Version:        1.41.0
-Release:        1
+Release:        2
 Summary:        Contains the HTTP/2 client, server and proxy programs.
 License:        MIT
 URL:            https://nghttp2.org/
 Source0:        https://github.com/nghttp2/nghttp2/releases/download/v%{version}/%{name}-%{version}.tar.xz
 
-BuildRequires:  CUnit-devel c-ares-devel gcc-c++ libev-devel openssl-devel
+BuildRequires:  c-ares-devel gcc-c++ libev-devel openssl-devel
 BuildRequires:  python3-devel systemd-devel zlib-devel
 
 Requires:       libnghttp2 = %{version}-%{release}
@@ -89,6 +89,12 @@ make %{?_smp_mflags}  check
 %{_mandir}/man1/*
 
 %changelog
+* Fri Jan 15 2021 gaihuiying <gaihuiying1@huawei.com> - 1.41.0-2
+- Type:requirement
+- ID:NA
+- SUG:NA
+- DESC:remove cunit-devel dependency
+
 * Wed Aug 26 2020 yuboyun <yuboyun@huawei.com> - 1.41.0-1
 - Type:update
 - ID:NA
