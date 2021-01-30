@@ -1,6 +1,6 @@
 Name:           nghttp2
-Version:        1.41.0
-Release:        2
+Version:        1.42.0
+Release:        1
 Summary:        Contains the HTTP/2 client, server and proxy programs.
 License:        MIT
 URL:            https://nghttp2.org/
@@ -89,6 +89,12 @@ make %{?_smp_mflags}  check
 %{_mandir}/man1/*
 
 %changelog
+* Fri Jan 29 2021 xihaochen <xihaochen@huawei.com> - 1.42.0-1
+- Type:requirements
+- Id:NA
+- SUG:NA
+- DESC:update nghttp2 to 1.42.0
+
 * Mon Jul 27 2020 cuibaobao <cuibaobao1@huawei.com> - 1.41.0-2
 - Type:fix in files
 - ID:NA
