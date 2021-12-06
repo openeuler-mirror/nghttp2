@@ -1,5 +1,5 @@
 Name:           nghttp2
-Version:        1.42.0
+Version:        1.46.0
 Release:        1
 Summary:        Contains the HTTP/2 client, server and proxy programs.
 License:        MIT
@@ -89,6 +89,12 @@ make %{?_smp_mflags}  check
 %{_mandir}/man1/*
 
 %changelog
+* Mon Dec 06 2021 yanglu <yanglu72@huawei.com> - 1.46.0-1
+- Type:requirements
+- Id:NA
+- SUG:NA
+- DESC:update nghttp2 to 1.46.0
+
 * Fri Jan 29 2021 xihaochen <xihaochen@huawei.com> - 1.42.0-1
 - Type:requirements
 - Id:NA
